@@ -14,11 +14,25 @@ A simple, free, open-source way to get a location notification the moment your l
 - macOS
 - Windows
 
+## How to Get Your Telegram Bot Token and Chat ID
+
+1. Open Telegram and search for **@BotFather**.
+2. Send the command `/newbot`.
+3. Follow the prompts: give your bot a display name and a username that ends in `bot` (example: `MyLaptopPingBot`).
+4. BotFather will reply with a message that includes a long token that looks like `123456789:AAHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`. Copy this — it is your **BOT_TOKEN**.
+5. Open a chat with your new bot (search for its username) and send it any message (for example "hello").
+6. In a web browser, go to this address (replace the token with yours):
+   ```
+   https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
+   ```
+7. Look for a section that contains `"chat":{"id":`. The number next to it is your **CHAT_ID**.
+
+Keep both values private. If your bot token ever leaks, open BotFather again and send `/revoke` to generate a new one, then update your script.
+
 ## Quick Start
 
-1. Create a Telegram bot with [@BotFather](https://t.me/BotFather) and note the **BOT_TOKEN**.
-2. Message your bot once, then visit `https://api.telegram.org/bot<BOT_TOKEN>/getUpdates` to get your **CHAT_ID**.
-3. Follow the platform-specific instructions below.
+1. Create a Telegram bot and get your **BOT_TOKEN** and **CHAT_ID** using the steps above.
+2. Follow the platform-specific instructions below.
 
 ## Platform Guides
 
@@ -57,7 +71,7 @@ These BIOS locks stop most casual thieves from wiping the OS. The phone-home scr
 
 ## Security Notes
 
-- Keep your BOT_TOKEN private.
+- Keep your BOT_TOKEN private. If it is ever exposed, regenerate it immediately with `/revoke` in BotFather and update your script.
 - This is a detection tool, not a lock. Pair it with the BIOS steps above for best results.
 - A determined attacker with physical access and time can still remove software. The goal is to make opportunistic theft much harder and give you a recovery signal.
 
