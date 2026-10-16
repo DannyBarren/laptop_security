@@ -2,6 +2,8 @@
 
 A simple, free, open-source way to get a location notification the moment your laptop connects to any network (or changes networks).
 
+![Laptop Security — Free Phone-Home Location Tracker](docs/banner.jpeg)
+
 **What it does**
 - Sends a message (IP, approximate location, nearby Wi-Fi, hostname, uptime, battery) to Telegram (or any similar bot platform) on:
   - Boot / first network connection
